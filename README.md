@@ -2,6 +2,8 @@
 
 - [Starting a TypeScript Project in 2021](https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/)
 
+# Basic Project Setup
+
 ```
 
 # Create project folder
@@ -82,3 +84,25 @@ Add scripts to your package.json:
 💡 In Visual Studio Code you can use the build and test tasks to start scripts with keyboard shortcuts. In the command palette “Configure Default Build Task” and “Configure Default Test Task” ([see the VS Code docs](https://code.visualstudio.com/docs/editor/tasks)).
 
 ---
+
+# Tests with Jest
+
+You can write [Jest tests](https://jestjs.io/docs/getting-started) [like this:](https://github.com/metachris/typescript-boilerplate/blob/master/src/main.test.ts)
+
+```
+import { greet } from './main'
+
+test('the data is peanut butter', () => {
+  expect(1).toBe(1)
+});
+
+test('greeting', () => {
+  expect(greet('Foo')).toBe('Hello Foo')
+});
+
+```
+
+Run the tests with npm run test, no separate compile step is necessary.
+
+See also the [Jest documentation](https://jestjs.io/docs/getting-started)
+Take a look at other modern test runners such as ava, uvu and tape
